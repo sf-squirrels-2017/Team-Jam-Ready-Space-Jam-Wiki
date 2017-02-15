@@ -68,4 +68,4 @@ A SuperUser:
 
 ####Schema:
 
-![Schema](https://drive.google.com/file/d/0B6fWHBQDERhOT2c5UDJhUmxBWDA/view?usp=sharing)
+![Schema](https://raw.githubusercontent.com/sf-squirrels-2017/Team-Jam-Ready-Space-Jam-Wiki/master/Schema.png)
