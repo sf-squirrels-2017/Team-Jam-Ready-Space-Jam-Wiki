@@ -42,6 +42,28 @@
 
 ###MVP User Stories:
 
+A guest :
+- can view featured articles
+- can browse by category and view the category's respective articles
+- can search by words like "Space " or "Jam"
+- can register
+
+A Logged-in user:
+- can log in
+- is a registered guest, and can logout
+- can create articles
+- can create citations
+- can add links in citations (bibliographies)
+- can edit articles
+- can delete their own articles
+- can flag any article as 'citation needed'
+- can upload photos for their articles
+
+A SuperUser:
+- can do everything that a logged in user can do
+- can delete any article
+- can de-flag any article as 'citation needed' if a citation has been added since being flagged.
+
 ####Wireframes:
 
 ####Schema:
