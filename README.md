@@ -5,10 +5,10 @@
 
 ####Team Members:
 
-- Matt Eller
-- George Czurlanis
-- Lisa Nguyen
-- Rebecca Orr
+- [Rebecca Orr](https://github.com/rreorr)
+- [George Czurlanis](https://github.com/georgecode)
+- [Lisa Nguyen](https://github.com/lisaofalltrades)
+- [Matt Eller](https://github.com/mattheweller)
 
 ####MVP User Stories:
 
