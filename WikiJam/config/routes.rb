@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :destroy]
   get '/join' => 'users#new'
-  root to: 'scategories#index'
+  root to: 'categories#index'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
