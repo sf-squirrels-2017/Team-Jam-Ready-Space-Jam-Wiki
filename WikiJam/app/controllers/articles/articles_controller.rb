@@ -1,0 +1,1 @@
+class ArticlesController < ActionController::Base
