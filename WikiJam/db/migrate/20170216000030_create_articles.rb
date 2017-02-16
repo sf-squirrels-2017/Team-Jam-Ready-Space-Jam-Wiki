@@ -3,9 +3,10 @@ class CreateArticles < ActiveRecord::Migration[5.0]
     create_table :articles do |t|
       t.boolean :published
       t.boolean :citation_required
-      t.belongs_to :creator, class_name: "User"
-      t.belongs_to :category
-
+      t.text :article_body
+      t.string :article_title
+      t.references :creator, class_name: "User"
+      t.references :category
       t.timestamps
     end
   end
