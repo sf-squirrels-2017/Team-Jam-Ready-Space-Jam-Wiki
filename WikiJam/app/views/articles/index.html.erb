@@ -1,4 +1,5 @@
 <article class="xviews xarticles xindex">
+
 	<%= link_to "New Article", new_category_article_path %>
 	<% if @articles.blank?  && !@category %>
 	  <h4>There are no articles containing the term <%= params[:search] %>.</h4>
@@ -13,5 +14,3 @@
 		<% end %>
 	<% end %>
 </article>
-
-
