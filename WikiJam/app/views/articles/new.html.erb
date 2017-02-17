@@ -1,4 +1,6 @@
-
 <h1>Article New Page</h1>
-<%= render 'form' %>
-
+	<% if current_user %>
+	 <%= render 'form' %>
+	<% else %>
+	 <p>You need to be logged in to create articles.</p>
+	<% end %>

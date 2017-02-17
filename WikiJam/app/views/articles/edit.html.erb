@@ -1,2 +1,6 @@
 <h1>Article Edit Page</h1>
-<%= render 'form' %>
+	<% if current_user %>
+		<%= render 'form' %>
+	<% else %>
+<p> You must be logged in to edit articles.</p>
+<% end %>
