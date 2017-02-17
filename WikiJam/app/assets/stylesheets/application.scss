@@ -17,6 +17,51 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+body{
+  background:image-url('spaceJamBgFade.jpg');
+  background-size: cover;
+  height:100%;
+}
+.logo{
+  background:image-url('logo.png');
+  background-size: cover;
+  width:200px;
+  height:161px;
+  margin-left: 10px;
+}
+
+nav{
+  height:200px;
+  width:100%;
+  background-color: rgba(117, 39, 160,0.9);
+  box-shadow:5px 5px 5px #888888;
+  margin-bottom: 20px;
+}
+
+nav li{
+ list-style-type:none;
+ float:left;
+ margin-right: 20px;
+ font-size: 2em;
+}
+nav li a{
+color: rgba(255, 234, 130,0.9);
+
+}
+nav li a:hover{
+  color:black;
+  text-decoration: none;
+  border-bottom: 2px solid ;
+}
+
+iframe.wysihtml5-sandbox{
+  width:50% !important;
+  height:250px !important;
+  background-color:white !important;
+}
+
+// These are all of Lisa's styles below
 th, td {
     padding: 5px;
 }
@@ -91,3 +136,4 @@ input[type=text] {
 input[type=text]:focus {
     width: 100%;
 }
+

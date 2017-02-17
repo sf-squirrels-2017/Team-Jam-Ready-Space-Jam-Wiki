@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217025142) do
+ActiveRecord::Schema.define(version: 20170217154518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.boolean  "published"
-    t.boolean  "citation_required"
+    t.boolean  "published",         default: false
+    t.boolean  "citation_required", default: false
     t.text     "article_body"
     t.string   "article_title"
     t.integer  "creator_id"
     t.integer  "category_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["category_id"], name: "index_articles_on_category_id", using: :btree
     t.index ["creator_id"], name: "index_articles_on_creator_id", using: :btree
   end
@@ -73,9 +73,9 @@ ActiveRecord::Schema.define(version: 20170217025142) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.boolean  "admin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
