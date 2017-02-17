@@ -4,13 +4,10 @@
 <% elsif @category %>
 	<%= @category.name %>
 	<% @articles.each do | article | %>
-		<a href="category_article_path"><%= article.article_title %></a>
+		<a href="/categories/<%=@category.id%>/articles/<%=article.id%>"><%= article.article_title %></a>
 	<% end %>
 <% else %>
 	<% @articles.each do | article | %>
 		<a href="article_path"><%= article.article_title %></a>
 	<% end %>
 <% end %>
-
-
-
