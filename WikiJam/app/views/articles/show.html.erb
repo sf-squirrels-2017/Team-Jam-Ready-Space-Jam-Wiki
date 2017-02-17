@@ -1,21 +1,23 @@
-<h2><%= @category.name %></h2>
-<p><%= @article.article_title %></p>
-<p><%= @article.article_body.html_safe %></p>
+<article class="xviews xarticles xshow">
+  <h2><%= @category.name %></h2>
+  <p><%= @article.article_title %></p>
+  <p><%= @article.article_body.html_safe %></p>
 
-<% if current_user %>
-    <%= link_to "Edit Article", edit_category_article_path(@category, @article)%>
-    <%= link_to 'Add a citation', new_category_article_citation_path(@category, @article) %>
-<% end %>
-<% if current_user && (current_user.admin || @article.creator == current_user )%>
-    <%= link_to "Delete Article", category_article_path(@category, @article), method: :delete, data: {confirm: "Are you sure?"}%>
-<% end %>
-
-<h3>References</h3>
-
-<table>
-  <% @citations.each do |citation| %>
-  <tr>
-    <td><%= citation.body %> </td>
-  <tr>
+  <% if current_user %>
+      <%= link_to "Edit Article", edit_category_article_path(@category, @article)%>
+      <%= link_to 'Add a citation', new_category_article_citation_path(@category, @article) %>
   <% end %>
-</table>
+  <% if current_user && (current_user.admin || @article.creator == current_user )%>
+      <%= link_to "Delete Article", category_article_path(@category, @article), method: :delete, data: {confirm: "Are you sure?"}%>
+  <% end %>
+
+  <h3>References</h3>
+
+  <table>
+    <% @citations.each do |citation| %>
+    <tr>
+      <td><%= citation.body %> </td>
+    </tr>
+    <% end %>
+  </table>
+</article>
