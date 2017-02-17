@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+
   def index
     @categories = Category.all
   end
@@ -6,8 +7,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by(name: (params[:name]))
 
-
-
-    redirect_to category_path(@category)
+    redirect_to category_articles_path(@category)
   end
 end

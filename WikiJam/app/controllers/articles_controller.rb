@@ -43,14 +43,3 @@ class ArticlesController < ApplicationController
   end
 
 end
-
-#
-# POST   /categories/:category_id/articles(.:format)          articles#create
-# new_category_article GET    /categories/:category_id/articles/new(.:format)      articles#new
-# edit_category_article GET    /categories/:category_id/articles/:id/edit(.:format) articles#edit
-# category_article GET    /categories/:category_id/articles/:id(.:format)      articles#show
-#  PATCH  /categories/:category_id/articles/:id(.:format)      articles#update
-#  PUT    /categories/:category_id/articles/:id(.:format)      articles#update
-#  DELETE /categories/:category_id/articles/:id(.:format)      articles#destroy
-# categories GET    /categories(.:format)                                categories#index
-# category GET    /categories/:id(.:format)                            categories#show
