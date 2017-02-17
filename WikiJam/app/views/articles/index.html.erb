@@ -1,1 +1,16 @@
-<%= @category.name %>
+<a href="articles/new">new article</a>
+<% if @articles.blank? %>
+  <h4>There are no articles containing the term <%= params[:search] %>.</h4>
+<% elsif @category %>
+	<%= @category.name %>
+	<% @articles.each do | article | %>
+		<a href="category_article_path"><%= article.article_title %></a>
+	<% end %>
+<% else %>
+	<% @articles.each do | article | %>
+		<a href="article_path"><%= article.article_title %></a>
+	<% end %>
+<% end %>
+
+
+
