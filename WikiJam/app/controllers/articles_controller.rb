@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 
   def index
     if params[:search]
-       @articles = Article.search(params[:search]).order("created_at DESC")
+      @articles = Article.search(params[:search]).order("created_at DESC")
     else
       @articles = @category.articles
     end
@@ -17,21 +17,27 @@ class ArticlesController < ApplicationController
     @article = @category.articles.new(article_params)
     @article.creator_id = current_user.id
     if @article.save
-      redirect_to @article
+      redirect_to [@category, @article]
     else
       render 'new'
     end
   end
 
   def edit
-
+    @article = Article.find(params[:id])
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def update
-
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to [@category, @article]
+    else
+      render 'new'
+    end
   end
 
   def destroy
