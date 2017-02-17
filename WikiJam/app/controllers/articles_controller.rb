@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   before_action :find_category
 
   def index
-    @articles = @category.articles
+    if params[:search]
+       @articles = Article.search(params[:search]).order("created_at DESC")
+    else
+      @articles = @category.articles
+    end
   end
 
   def new
@@ -35,7 +39,9 @@ class ArticlesController < ApplicationController
   private
 
   def find_category
-    @category = Category.find(params[:category_id])
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+    end
   end
 
   def article_params
