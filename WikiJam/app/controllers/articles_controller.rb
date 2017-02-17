@@ -6,8 +6,6 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    p current_user
-    p current_user.id
     @article = Article.new
   end
 
