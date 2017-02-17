@@ -13,13 +13,12 @@ class UsersController < ApplicationController
     end
   end
 
+# TODO: We want to do this the proper way later
   def update
     @user = current_user
-    if @user.update(params[:admin])
-      redirect_to '/'
-    else
-      redirect_to '/'
-    end
+    @user.admin = true
+    @user.save
+    redirect_to '/'
   end
 
 

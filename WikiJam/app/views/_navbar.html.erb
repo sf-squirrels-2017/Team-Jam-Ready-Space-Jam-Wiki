@@ -4,6 +4,9 @@
     <li><a href="/">Home</a></li>
     <% if current_user %>
     <li><%= link_to "Log Out", logout_path, method: :delete%></li>
+      <% if current_user.admin %>
+        <li>Admin <%=current_user.username%></li>
+      <% end %>
     <% else %>
     <li><a href="/users/new">Register</a></li>
     <li><a href="/login">Log In</a></li>

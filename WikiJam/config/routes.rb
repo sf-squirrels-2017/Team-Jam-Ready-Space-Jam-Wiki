@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 
   resources :users, only: [:new, :create, :destroy]
+  resources :users, only: [:update], as: "update_user"
   get '/join' => 'users#new'
   root to: 'categories#index'
 
