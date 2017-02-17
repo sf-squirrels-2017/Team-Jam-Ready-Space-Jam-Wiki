@@ -13,11 +13,14 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-
   def create
     @article = @category.articles.new(article_params)
     @article.creator_id = current_user.id
-
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -25,7 +28,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
   end
 
   def update
