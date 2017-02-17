@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   end
 
   resources :articles, only: [:index], as: "all_articles"
-
   resources :citations
 
 end
