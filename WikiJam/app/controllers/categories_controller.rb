@@ -5,5 +5,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by(name: (params[:name]))
+    redirect_to 'articles#index'
   end
 end
