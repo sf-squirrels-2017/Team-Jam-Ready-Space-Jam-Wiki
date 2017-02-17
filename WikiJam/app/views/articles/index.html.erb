@@ -10,7 +10,7 @@
 	<% if @articles.blank?  && !@category %>
 	  <h4>There are no articles containing the term <%= params[:search] %>.</h4>
 	<% elsif @category%>
-		<%= @category.name %>
+		<h1 class="catagory"><%= @category.name %></h1>
 		<% @articles.each do | article | %>
 			<%= link_to article.article_title, category_article_path(@category, article) %>
 		<% end %>

@@ -16,12 +16,26 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@font-face {
+  font-family: 'spaceJam';
+  src:url(asset-path('GROBOLD.ttf'));
+
+}
 
 $neonGreen:rgba(104,223,42,1);
 body{
   background:image-url('spaceJamBgFade.jpg');
   background-size: cover;
   height:100%;
+  font-family: 'spaceJam';
+}
+a{
+  color:rgba(72, 6, 108, 1)
+}
+a:hover{
+  text-decoration: none;
+
+  /*width:300px;*/
 }
 .logo{
   background:image-url('logo.png');
@@ -68,7 +82,7 @@ text-shadow: 1px 1px black;
 
 }
 nav li a:hover{
-  color:black;
+  color:white;
   text-decoration: none;
   border-bottom: 2px solid ;
 }
@@ -90,7 +104,19 @@ iframe.wysihtml5-sandbox{
   border-radius: 10px;
 }
 
+.xviews.xarticles.xindex a{
+  display: block;
+  font-size: 2em;
+  display:inline-block;
+  padding:20px;
 
+}
+.xviews.xarticles.xindex a:hover{
+  color:rgba(94, 17, 137,1);
+ /* border:1px solid black;*/
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 10px;
+}
 
 
 /* These are all of Lisa's styles below
