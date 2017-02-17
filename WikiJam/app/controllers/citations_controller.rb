@@ -1,8 +1,8 @@
 class CitationsController < ApplicationController
-  # before_action :find_article
+  before_action :find_article
 
   def index
-    @citations = Citation.all
+    @citations = @article.citations
   end
 
   def new
@@ -10,14 +10,21 @@ class CitationsController < ApplicationController
   end
 
   def create
-    @citation = @article.citaions.new(citation_params)
-    @article.creator_id = current_user.id
+    @citation = @article.citations.new(citation_params)
+    @citation.creator_id = current_user.id
+    if @citation.save
+      redirect_to [@article]
+    else
+      render 'new'
+    end
   end
 
   private
-  # def find_article
-  #   @article = Article.find(params[:article_id])
-  # end
+  def find_article
+    if params[:article_id]
+      @article = Article.find(params[:article_id])
+    end
+  end
 
   def citation_params
     params.require(:citation).permit(:citation_body)
