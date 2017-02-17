@@ -1,4 +1,6 @@
+<article class="xviews xarticles xforms">
 <%= @category.name %>
+
 <%= form_for([@category, @article]) do |f| %>
     <%= f.label :article_title %>
     <%= f.text_field :article_title %>
@@ -6,3 +8,4 @@
     <%= f.bootsy_area :article_body, rows: 12, cols: 82%><br>
     <%= f.submit %>
 <% end %>
+</article>
