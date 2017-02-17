@@ -2,8 +2,8 @@
   <div class="logo"></div>
   <ul>
     <li><a href="/">Home</a></li>
-    <% if logged_in? %>
-    <li><a href="/logout">Log Out</a></li>
+    <% if current_user %>
+    <li><%= link_to "Log Out", logout_path, method: :delete%></li>
     <% else %>
     <li><a href="/users/new">Register</a></li>
     <li><a href="/login">Log In</a></li>

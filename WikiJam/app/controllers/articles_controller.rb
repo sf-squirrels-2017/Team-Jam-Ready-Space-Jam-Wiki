@@ -1,8 +1,14 @@
 class ArticlesController < ApplicationController
   before_action :find_category
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
+
 
   def index
-    @articles = @category.articles
+    if params[:search]
+      @articles = Article.search(params[:search]).order("created_at DESC")
+    else
+      @articles = @category.articles
+    end
   end
 
   def new
@@ -13,31 +19,45 @@ class ArticlesController < ApplicationController
     @article = @category.articles.new(article_params)
     @article.creator_id = current_user.id
     if @article.save
-      redirect_to @article
+      redirect_to [@category, @article]
     else
       render 'new'
     end
   end
 
-  def edit
-
+  def show
+    # @article = Article.find(params[:id])
   end
 
-  def show
+  def edit
+    # @article = Article.find(params[:id])
   end
 
   def update
-
+    # @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to [@category, @article]
+    else
+      render 'new'
+    end
   end
 
   def destroy
-
+    # @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to root_path
   end
 
   private
 
   def find_category
-    @category = Category.find(params[:category_id])
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+    end
+  end
+
+  def find_article
+    @article = Article.find(params[:id])
   end
 
   def article_params
@@ -45,14 +65,3 @@ class ArticlesController < ApplicationController
   end
 
 end
-
-#
-# POST   /categories/:category_id/articles(.:format)          articles#create
-# new_category_article GET    /categories/:category_id/articles/new(.:format)      articles#new
-# edit_category_article GET    /categories/:category_id/articles/:id/edit(.:format) articles#edit
-# category_article GET    /categories/:category_id/articles/:id(.:format)      articles#show
-#  PATCH  /categories/:category_id/articles/:id(.:format)      articles#update
-#  PUT    /categories/:category_id/articles/:id(.:format)      articles#update
-#  DELETE /categories/:category_id/articles/:id(.:format)      articles#destroy
-# categories GET    /categories(.:format)                                categories#index
-# category GET    /categories/:id(.:format)                            categories#show

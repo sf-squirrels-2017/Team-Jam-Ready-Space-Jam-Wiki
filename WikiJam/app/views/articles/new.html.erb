@@ -1,17 +1,4 @@
-Article New Page
-yo whats up<br>
-<%= @category.name %>
-<%= form_for :article, url: {action: 'create'} do |f| %>
 
-    <%= f.label :article_title %>
-    <%= f.text_field :article_title %>
+<h1>Article New Page</h1>
+<%= render 'form' %>
 
-    <div class="textFeild"><%= f.label :content %></div>
-    <%#= f.text_area :text %>
-    <%= f.bootsy_area :article_body %><br>
-
-
-
-    <%= f.submit %>
-
-<% end %>

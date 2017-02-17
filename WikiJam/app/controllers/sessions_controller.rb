@@ -6,16 +6,15 @@ class SessionsController < ApplicationController
       # Save the user ID in the session so it can be used in
       # subsequent requests
       log_in(@user)
+      p @user
       redirect_to root_url
     else
       render :new
     end
   end
 
-  # "Delete" a login, aka "log the user out"
   def destroy
-    # Remove the user id from the session
-    @current_user = session[:current_user_id] = nil
+    log_out
     redirect_to root_url
   end
 end
