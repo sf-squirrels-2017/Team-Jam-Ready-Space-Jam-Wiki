@@ -1,5 +1,4 @@
-<form>
-<%= form_for :citations do |f| %>
+<%= form_for [@category, @article, @citation] do |f| %>
   <p>
     <%= f.label :body %><br>
     <%= f.text_area :body %>
@@ -8,4 +7,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-</form>
