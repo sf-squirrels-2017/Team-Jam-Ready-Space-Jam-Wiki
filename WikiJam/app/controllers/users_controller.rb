@@ -13,6 +13,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    @user = current_user
+    if @user.update(params[:admin])
+      redirect_to '/'
+    else
+      redirect_to '/'
+    end
+  end
 
 
   private
