@@ -5,11 +5,11 @@
 <% if current_user.admin || @article.creator == current_user %>
 	<%= link_to "Edit Article", edit_category_article_path(@category, @article)%>
 	<%= link_to "Delete Article", category_article_path(@category, @article), method: :delete, data: {confirm: "Are you sure?"}%>
+	<%= link_to 'Add a reference', new_citation_path %>
 <% end %>
 
-<h1>References</h1>
+<h3>References</h3>
 
-<%= link_to 'Add a reference', new_citation_path %>
 <table>
   <% @citations.each do |citation| %>
   <tr>
