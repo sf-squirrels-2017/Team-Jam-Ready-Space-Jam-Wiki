@@ -13,6 +13,13 @@ class UsersController < ApplicationController
     end
   end
 
+# TODO: We want to do this the proper way later
+  def update
+    @user = current_user
+    @user.admin = true
+    @user.save
+    redirect_to '/'
+  end
 
 
   private

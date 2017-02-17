@@ -1,12 +1,16 @@
 <article class="xviews xarticles xindex">
-	<% if current_user && @category %>
+	<% if current_user && @category &&!current_user.admin %>
 		<%= link_to "New Article", new_category_article_path %>
+		<%= form_for (current_user) do |h| %>
+			<%= h.hidden_field :admin, value: :true %>
+			<%= h.submit "Become Admin", class: "btn" %>
+		<% end %>
 	<% end %>
 
 	<% if @articles.blank?  && !@category %>
 	  <h4>There are no articles containing the term <%= params[:search] %>.</h4>
 	<% elsif @category%>
-		<%= @category.name %>
+		<h1 class="catagory"><%= @category.name %></h1>
 		<% @articles.each do | article | %>
 			<%= link_to article.article_title, category_article_path(@category, article) %>
 		<% end %>
