@@ -1,4 +1,5 @@
 class CitationsController < ApplicationController
+  before_action :find_category
   before_action :find_article
 
   def index
@@ -11,22 +12,27 @@ class CitationsController < ApplicationController
 
   def create
     @citation = @article.citations.new(citation_params)
-    @citation.creator_id = current_user.id
+    @citation.user_id = current_user.id
     if @citation.save
-      redirect_to [@article]
+      redirect_to [@category, @article]
     else
       render 'new'
     end
   end
 
   private
-  def find_article
-    if params[:article_id]
-      @article = Article.find(params[:article_id])
+
+  def find_category
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
     end
   end
 
+  def find_article
+    @article = Article.find(params[:article_id])
+  end
+
   def citation_params
-    params.require(:citation).permit(:citation_body)
+    params.require(:citation).permit(:body)
   end
 end

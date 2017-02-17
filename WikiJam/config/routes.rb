@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :categories , only: [:index, :show] do
-    resources :articles
+    resources :articles do
+      resources :citations, only: [:new, :create, :destroy]
+    end
   end
 
   resources :articles, only: [:index], as: "all_articles"
-  resources :citations
 
 end
