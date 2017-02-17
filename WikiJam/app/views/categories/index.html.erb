@@ -7,4 +7,11 @@
 <% @categories.each do |category| %>
 <p><a href="/categories/<%=category.id%>/articles"><%=category.name%></a><p>
 <% end %>
+
+	<div class="xfeatured">
+		<h4>Featured: Random Jam of the Day</h4>
+		<% @featured = @categories.sample.articles.sample %>
+		<h5><%= link_to @featured.article_title, category_article_path(@featured.category, @featured) %></h5>
+		<p><%= @featured.article_body %></p>
+	</div>
 </article>
