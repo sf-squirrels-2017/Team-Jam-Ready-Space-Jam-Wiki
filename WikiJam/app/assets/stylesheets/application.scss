@@ -16,3 +16,125 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body{
+  background:image-url('spaceJamBgFade.jpg');
+  background-size: cover;
+  height:100%;
+}
+.logo{
+  background:image-url('logo.png');
+  background-size: cover;
+  width:200px;
+  height:161px;
+  margin-left: 10px;
+}
+
+nav{
+  height:200px;
+  width:100%;
+  background-color: rgba(117, 39, 160,0.9);
+  box-shadow:5px 5px 5px #888888;
+  margin-bottom: 20px;
+}
+
+nav li{
+ list-style-type:none;
+ float:left;
+ margin-right: 20px;
+ font-size: 2em;
+}
+nav li a{
+color: rgba(255, 234, 130,0.9);
+
+}
+nav li a:hover{
+  color:black;
+  text-decoration: none;
+  border-bottom: 2px solid ;
+}
+
+iframe.wysihtml5-sandbox{
+  width:50% !important;
+  height:250px !important;
+  background-color:white !important;
+}
+
+/*// These are all of Lisa's styles below
+th, td {
+    padding: 5px;
+}
+// navbar
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #008080;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #00cc66;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+// responsive search bar
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+*/

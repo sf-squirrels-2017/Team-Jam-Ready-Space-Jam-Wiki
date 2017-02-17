@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :categories , only: [:index, :show] do
     resources :articles
   end
+
   resources :articles, only: [:index], as: "all_articles"
+  resources :citations
 
 end
