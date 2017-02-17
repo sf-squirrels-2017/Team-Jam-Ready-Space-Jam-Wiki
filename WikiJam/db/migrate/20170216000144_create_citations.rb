@@ -3,7 +3,7 @@ class CreateCitations < ActiveRecord::Migration[5.0]
     create_table :citations do |t|
       t.string :body
       t.references :user
-      t.belongs_to :article
+      t.references :article
 
       t.timestamps
     end

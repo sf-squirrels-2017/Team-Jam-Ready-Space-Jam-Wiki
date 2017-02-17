@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <% if logged_in? %>
+    <li><a href="/logout">Log Out</a></li>
+    <% else %>
+    <li><a href="/users/new">Register</a></li>
+    <li><a href="/login">Log In</a></li>
+    <% end %>
+  </ul>
+</nav>

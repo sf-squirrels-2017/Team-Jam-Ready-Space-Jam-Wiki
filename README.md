@@ -21,6 +21,7 @@
     - Trello
 - Team Tasks
 - At least one test per onion layer
+- Laugh
 
 #####Team Dynamics:
 
