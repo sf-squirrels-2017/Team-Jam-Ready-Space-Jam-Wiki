@@ -17,7 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+$neonGreen:rgba(104,223,42,1);
 body{
   background:image-url('spaceJamBgFade.jpg');
   background-size: cover;
@@ -39,6 +39,23 @@ nav{
   margin-bottom: 20px;
 }
 
+.xpartial.xuser.xsearch{
+  float:right;
+  margin-top: -56px;
+  margin-right: 20px;
+  input[type=submit]{
+    background-color: $neonGreen;
+    border:none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #888888;
+  }
+  input[name=search]{
+    border:none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #888888;
+  }
+}
+
 nav li{
  list-style-type:none;
  float:left;
@@ -47,6 +64,7 @@ nav li{
 }
 nav li a{
 color: rgba(255, 234, 130,0.9);
+text-shadow: 1px 1px black;
 
 }
 nav li a:hover{
@@ -60,6 +78,20 @@ iframe.wysihtml5-sandbox{
   height:250px !important;
   background-color:white !important;
 }
+
+
+.xviews{
+  width:70%;
+  margin-right:15%;
+  margin-left:15%;
+  border:black 1px solid;
+  padding:15px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 10px;
+}
+
+
+
 
 /*// These are all of Lisa's styles below
 th, td {
