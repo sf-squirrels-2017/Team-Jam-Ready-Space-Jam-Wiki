@@ -1,0 +1,10 @@
+<article class="xviews xusers xnew">
+<i>
+  <p>Everybody get up it's time to slam now</p>
+  <h4>We got a real jam goin' down</h4>
+  <h1>Welcome to the Space Jam</h1>
+</i>
+<% @categories.each do |category| %>
+<p><a href="/categories/<%=category.id%>/articles"><%=category.name%></a><p>
+<% end %>
+</article>
