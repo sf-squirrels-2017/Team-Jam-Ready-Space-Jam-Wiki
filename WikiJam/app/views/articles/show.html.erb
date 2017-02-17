@@ -4,3 +4,15 @@
 
 <%= link_to "Edit Article", edit_category_article_path(@category, @article)%>
 <%= link_to "Delete Article", category_article_path(@category, @article), method: :delete, data: {confirm: "Are you sure?"}%>
+
+<h1>References</h1>
+
+<%= link_to 'Add a reference', new_citation_path %>
+<table>
+  <% @citations.each do |citation| %>
+  <tr>
+    <td><b><%= citation.id %></b></td>
+    <td><%= citation.body %> </td>
+  <tr>
+  <% end %>
+</table>
