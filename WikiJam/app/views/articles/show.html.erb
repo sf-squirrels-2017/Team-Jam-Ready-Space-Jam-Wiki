@@ -6,7 +6,7 @@
     <%= link_to "Edit Article", edit_category_article_path(@category, @article)%>
     <%= link_to 'Add a citation', new_category_article_citation_path(@category, @article) %>
 <% end %>
-<% if current_user.admin || @article.creator == current_user %>
+<% if current_user && (current_user.admin || @article.creator == current_user )%>
     <%= link_to "Delete Article", category_article_path(@category, @article), method: :delete, data: {confirm: "Are you sure?"}%>
 <% end %>
 
