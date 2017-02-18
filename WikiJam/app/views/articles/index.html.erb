@@ -1,6 +1,9 @@
 <article class="xviews xarticles xindex">
-	<% if current_user && @category &&!current_user.admin %>
+	<% if current_user && @category  %>
 		<%= link_to "New Article", new_category_article_path %>
+		
+		<% end %>
+		<% if current_user && !current_user.admin %>
 		<%= form_for (current_user) do |h| %>
 			<%= h.hidden_field :admin, value: :true %>
 			<%= h.submit "Become Admin", class: "btn" %>
