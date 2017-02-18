@@ -26,7 +26,7 @@ $neonGreen:rgba(104,223,42,1);
 body{
   background:image-url('spaceJamBgFade.jpg');
   background-size: cover;
-  height:100%;
+  height:200%;
   font-family: 'spaceJam';
 }
 a{
@@ -92,7 +92,10 @@ iframe.wysihtml5-sandbox{
   height:250px !important;
   background-color:white !important;
 }
+.new_user{
+  font-size: 2em;
 
+}
 
 .xviews{
   width:70%;
@@ -103,6 +106,8 @@ iframe.wysihtml5-sandbox{
   background-color: rgba(255,255,255,0.6);
   border-radius: 10px;
 }
+
+
 
 .xviews.xarticles.xindex a{
   display: block;
@@ -118,7 +123,13 @@ iframe.wysihtml5-sandbox{
   border-radius: 10px;
 }
 
+.heading{
+  text-align: center;
+}
 
+.xviews.xsessions.xlogin{
+font-size: 2em;
+}
 /* These are all of Lisa's styles below
 th, td {
     padding: 5px;

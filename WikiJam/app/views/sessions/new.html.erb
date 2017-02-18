@@ -1,12 +1,12 @@
 <article class="xviews xsessions xlogin">
 	<%= form_tag (login_path) do %>
-	 
+
 	  <%= label_tag 'email', 'Email' %>
-	  <%= text_field_tag 'email' %>
-	 
+	  <%= text_field_tag 'email' %><br>
+
 	  <%= label_tag 'password', 'Password' %>
-	  <%= password_field_tag 'password' %>
-	 
+	  <%= password_field_tag 'password' %><br>
+
 	  <%= submit_tag "Sign In"%>
 	<% end %>
 </article>
