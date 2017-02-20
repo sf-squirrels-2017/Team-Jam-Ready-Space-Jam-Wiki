@@ -39,7 +39,7 @@
 
 - User sessions
 - Get better with Routes
-- Get this shit on Heroku.
+- Heroku deployed: https://thawing-taiga-31432.herokuapp.com/
 
 ###MVP User Stories:
 
